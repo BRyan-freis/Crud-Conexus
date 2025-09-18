@@ -1,26 +1,26 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crmf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace CrudCreateConexus
 {
     public partial class frmCadastrodeClientes : Form
-
     {
-        //Conexão com o banco de dados MySQL
-        MySqlConnection Conexao;
-        string data_source = "datasource=localhost; username=root; password=; database=db_conexusfluxo";
 
-        private int ?codigo_cliente = null;
+        //Conexão Com o banco de dados MySql
+
+        MySqlConnection Conexao;
+        string data_source = "datasource=localhost; username=root; password=; database=db_clientes";
+
+        private int? codigo_cliente = null;
 
         public frmCadastrodeClientes()
         {
@@ -34,17 +34,18 @@ namespace CrudCreateConexus
             lstCliente.FullRowSelect = true;             // Seleciona a linha inteira ao clicar
             lstCliente.GridLines = true;                // Exibe linhas de grade
 
-           // Definindo as colunas da listview
+            // Definindo as colunas da listview
 
             lstCliente.Columns.Add("Codigo", 100, HorizontalAlignment.Left); //Coluna de Código
-            lstCliente.Columns.Add("Nome Completo", 200, HorizontalAlignment.Left); //Coluna de Nome
-            lstCliente.Columns.Add("Nome Social", 200, HorizontalAlignment.Left); //Coluna de Nome Social
-            lstCliente.Columns.Add("E-mail", 240, HorizontalAlignment.Left); //Coluna de E-mail
-            lstCliente.Columns.Add("CPF", 200, HorizontalAlignment.Left); //Coluna de CPF
+            lstCliente.Columns.Add("Tema", 200, HorizontalAlignment.Left); //Coluna de Nome
+            lstCliente.Columns.Add("Participante", 200, HorizontalAlignment.Left); //Coluna de Nome Social
+            lstCliente.Columns.Add("Data", 240, HorizontalAlignment.Left); //Coluna de E-mail
+            lstCliente.Columns.Add("Hora", 200, HorizontalAlignment.Left); //Coluna de CPF
 
             //Carrega os dados do clientes na interface
 
             carregar_cliente();
+
         }
 
         private void carregar_clientes_com_query(string query)
@@ -82,11 +83,11 @@ namespace CrudCreateConexus
                     // Cria uma linha para cada clientes com os dados retornados da consulta
                     string[] row =
                     {
-                        Convert.ToString(reader.GetInt32(0)), // Codigo
-                        reader.GetString(1),                  // Nome completo
-                        reader.GetString(2),                  // Nome social
-                        reader.GetString(3),                  // E-mail
-                        reader.GetString(4),                  // CPF
+                        Convert.ToString(reader.GetInt32(0)),
+                        reader.GetString(1),                  
+                        reader.GetString(2),                  
+                        reader.GetString(3),                 
+                        reader.GetString(4),                 
                     };
 
                     // Adiciona a linha ao listview
@@ -128,7 +129,7 @@ namespace CrudCreateConexus
         // Método para carregar todos os clientes no ListView (usando uma consulta sem parâmetros)
         private void carregar_cliente()
         {
-            string query = "SELECT * FROM dadosdocliente ORDER BY idcliente DESC";
+            string query = "SELECT * FROM dadosdocliente ORDER BY idSala DESC";
             carregar_clientes_com_query(query);
         }
 
@@ -138,9 +139,9 @@ namespace CrudCreateConexus
             {
                 //Validação de campos obrigatórios
 
-                if (string.IsNullOrEmpty(txtNomeCompleto.Text.Trim()) ||
-                    string.IsNullOrEmpty(txtEmail.Text.Trim()) ||
-                    string.IsNullOrEmpty(txtCPF.Text.Trim()))
+                if (string.IsNullOrEmpty(txtTema.Text.Trim()) ||
+                    string.IsNullOrEmpty(txtData.Text.Trim()) ||
+                    string.IsNullOrEmpty(txtHora.Text.Trim()))
                 {
                     MessageBox.Show("Todos os campos devem ser preechidos.",
                                     "Validação",
@@ -151,16 +152,16 @@ namespace CrudCreateConexus
 
                 //Validação do CPF
 
-                string cpf = txtCPF.Text.Trim();
+                //string cpf = txtCPF.Text.Trim();
 
-                if (!isValidCPFLength(cpf))
-                {
-                    MessageBox.Show("CPF inválido. Certifique-se de que o CPF tenha 11 digítos Numéricos.",
-                                    "Validação",
-                                     MessageBoxButtons.OK,
-                                     MessageBoxIcon.Warning);
-                    return; //Impede o prosseguimento se o CPF for inválido
-                }
+                //if (!isValidCPFLength(cpf))
+                //{
+                //    MessageBox.Show("CPF inválido. Certifique-se de que o CPF tenha 11 digítos Numéricos.",
+                //                    "Validação",
+                //                     MessageBoxButtons.OK,
+                //                     MessageBoxIcon.Warning);
+                //    return; //Impede o prosseguimento se o CPF for inválido
+                //}
 
                 //Cria conexão com banco de dados
 
@@ -180,15 +181,15 @@ namespace CrudCreateConexus
                 {
                     // Insert
 
-                    cmd.CommandText = "INSERT INTO dadosdocliente(nomecompleto, nomesocial, email, cpf)" +
-                        "VALUES(@nomecompleto, @nomesocial, @email, @cpf)";
+                    cmd.CommandText = "INSERT INTO dadosdocliente(tema, participante, data, hora)" +
+                        "VALUES(@tema, @participante, @data, @hora)";
 
                     // Adiciona os parâmetros com os dados do formulário
 
-                    cmd.Parameters.AddWithValue("@nomecompleto", txtNomeCompleto.Text.Trim());
-                    cmd.Parameters.AddWithValue("@nomesocial", txtNomeSocial.Text.Trim());
-                    cmd.Parameters.AddWithValue("@email", txtEmail.Text.Trim());
-                    cmd.Parameters.AddWithValue("@cpf", cpf);
+                    cmd.Parameters.AddWithValue("@tema", txtTema.Text.Trim());
+                    cmd.Parameters.AddWithValue("@participante", txtParticipante.Text.Trim());
+                    cmd.Parameters.AddWithValue("@data", txtData.Text.Trim());
+                    cmd.Parameters.AddWithValue("@hora", txtHora.Text.Trim());
 
                     // Executa o comando de inserção no banco
 
@@ -206,18 +207,18 @@ namespace CrudCreateConexus
                     // Update
 
                     cmd.CommandText = $"UPDATE `dadosdocliente` SET " +
-                    $"nomecompleto = @nomecompleto, " +
-                    $"nomesocial = @nomesocial, " +
-                    $"email = @email, " +
-                    $"cpf = @cpf " +
+                    $"tema = @tema, " +
+                    $"participante = @participante, " +
+                    $"data = @data, " +
+                    $"hora = @hora " +
                     $"WHERE idcliente = @codigo";
 
-                    // Adiciona os parãmetros com os dados do formulário
+                    // Adiciona os parametros com os dados do formulário
 
-                    cmd.Parameters.AddWithValue("@nomecompleto", txtNomeCompleto.Text.Trim());
-                    cmd.Parameters.AddWithValue("@nomesocial", txtNomeSocial.Text.Trim());
-                    cmd.Parameters.AddWithValue("@email", txtEmail.Text.Trim());
-                    cmd.Parameters.AddWithValue("@cpf", cpf);
+                    cmd.Parameters.AddWithValue("@tema", txtTema.Text.Trim());
+                    cmd.Parameters.AddWithValue("@participante", txtParticipante.Text.Trim());
+                    cmd.Parameters.AddWithValue("@data", txtData.Text.Trim());
+                    cmd.Parameters.AddWithValue("@hora", txtHora.Text.Trim());
                     cmd.Parameters.AddWithValue("@codigo", codigo_cliente);
 
                     // Excuta o comando de alteração no banco
@@ -238,17 +239,11 @@ namespace CrudCreateConexus
 
                 // LImpa os campos após o sucesso
 
-                txtNomeCompleto.Text = String.Empty;
-                txtNomeSocial.Text = " ";
-                txtEmail.Text = " ";
-                txtCPF.Text = " ";
+                limpar_formulario();
 
                 // Recarrega os clientes no ListView
 
                 carregar_cliente();
-
-                // MUda para a aba de pesquisa
-                tbControl.SelectedIndex = 1;
 
             }
             catch (MySqlException ex)
@@ -280,22 +275,23 @@ namespace CrudCreateConexus
             }
         }
 
+
         // Função para validar o comprimento e formato de CPF
 
-        private bool isValidCPFLength(string cpf)
-        {
-            //Remove todos os caracteres não númericos
+        //private bool isValidCPFLength(string cpf)
+        //{
+        //    //Remove todos os caracteres não númericos
 
-            cpf = new string(cpf.Where(char.IsDigit).ToArray());
+        //    cpf = new string(cpf.Where(char.IsDigit).ToArray());
 
-            // Verifica se o CPF tem exatamente 11 dígitos
+        //    // Verifica se o CPF tem exatamente 11 dígitos
 
-            return cpf.Length == 11;
-        }
+        //    return cpf.Length == 11;
+        //}
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM dadosdocliente WHERE idcliente LIKE @q OR nomecompleto LIKE @q OR nomesocial LIKE @q ORDER BY idcliente DESC";
+            string query = "SELECT * FROM dadosdocliente WHERE idSala LIKE @q OR tema LIKE @q OR participante LIKE @q ORDER BY idSala DESC";
             carregar_clientes_com_query(query);
         }
 
@@ -312,25 +308,92 @@ namespace CrudCreateConexus
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
 
-                txtNomeCompleto.Text = item.SubItems[1].Text;
-                txtNomeSocial.Text = item.SubItems[2].Text;
-                txtEmail.Text = item.SubItems[3].Text;
-                txtCPF.Text = item.SubItems[4].Text;
+                txtTema.Text = item.SubItems[1].Text;
+                txtParticipante.Text = item.SubItems[2].Text;
+                txtData.Text = item.SubItems[3].Text;
+                txtHora.Text = item.SubItems[4].Text;
+
+                btnExcluirCliente.Visible = true;
             }
         }
 
         private void btnNovoCliente_Click(object sender, EventArgs e)
         {
-            codigo_cliente = null;
+            limpar_formulario();
 
-            // LImpa os campos após o sucesso
+        }
 
-            txtNomeCompleto.Text = String.Empty;
-            txtNomeSocial.Text = " ";
-            txtEmail.Text = " ";
-            txtCPF.Text = " ";
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            excluir_cliente();
+        }
 
-            txtNomeCompleto.Focus();
+        private void btnExcluirCliente_Click(object sender, EventArgs e)
+        {
+            excluir_cliente();
+        }
+
+        private void excluir_cliente()
+        {
+            try
+            {
+                DialogResult opcaodigitada = MessageBox.Show("Tem certeza que deseja excluir o registro?" + codigo_cliente,
+                                  "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (opcaodigitada == DialogResult.Yes)
+                {
+
+                    Conexao = new MySqlConnection(data_source);
+                    Conexao.Open();
+
+                    MySqlCommand cmd = new MySqlCommand();
+
+                    cmd.Connection = Conexao;
+
+                    cmd.Prepare();
+
+                    cmd.CommandText = "DELETE FROM dadosdocliente WHERE idSala = @codigo";
+
+                    cmd.Parameters.AddWithValue("@codigo", codigo_cliente);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Os dados do cliente foram EXCLUÍDOS!",
+                                    "Sucesso",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
+                    limpar_formulario();
+
+                    // MUda para a aba de pesquisa
+                    tbControl.SelectedIndex = 1;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                // Trata Erros relacionados ao Mysql
+
+                MessageBox.Show("Erro" + ex.Number + " ocorreu: " + ex.Message,
+                                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex)
+            {
+
+                // Trata erros de outros tipos não relacioanados ao Database
+
+                MessageBox.Show("Ocorreu: " + ex.Message,
+                                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            finally
+            {
+                //Garante que a conexão com o banco será fechada, mesmo se ocorrer erro
+
+                if (Conexao != null && Conexao.State == ConnectionState.Open)
+                {
+                    Conexao.Close();
+                }
+            }
         }
 
         private void nepalform_load(object sender, EventArgs e)
@@ -338,8 +401,21 @@ namespace CrudCreateConexus
             this.FormBorderStyle = FormBorderStyle.None;  // Remove bordas e barra de título
             this.WindowState = FormWindowState.Maximized; // Maximiza a janela
         }
+
+        private void limpar_formulario()
+        {
+            codigo_cliente = null;
+
+            // LImpa os campos após o sucesso
+
+            txtTema.Text = String.Empty;
+            txtParticipante.Text = " ";
+            txtData.Text = " ";
+            txtHora.Text = " ";
+
+            txtTema.Focus();
+
+            btnExcluirCliente.Visible = false;
+        }
     }
 }
-
-
-

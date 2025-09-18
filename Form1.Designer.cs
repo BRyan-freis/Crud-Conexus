@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastrodeClientes));
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gradientPanel2 = new GradientPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,22 +41,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new GradientPanel();
+            this.btnExcluirCliente = new System.Windows.Forms.Button();
             this.btnNovoCliente = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.tbControl = new System.Windows.Forms.TabControl();
             this.tbCadastro = new System.Windows.Forms.TabPage();
-            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.txtHora = new System.Windows.Forms.MaskedTextBox();
             this.lblCPF = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtData = new System.Windows.Forms.TextBox();
             this.lblemail = new System.Windows.Forms.Label();
-            this.txtNomeSocial = new System.Windows.Forms.TextBox();
+            this.txtParticipante = new System.Windows.Forms.TextBox();
             this.lblNomeSocial = new System.Windows.Forms.Label();
-            this.txtNomeCompleto = new System.Windows.Forms.TextBox();
+            this.txtTema = new System.Windows.Forms.TextBox();
             this.lblNomeCompleto = new System.Windows.Forms.Label();
             this.tbConsulta = new System.Windows.Forms.TabPage();
             this.lstCliente = new System.Windows.Forms.ListView();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1.SuspendLayout();
             this.gradientPanel2.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             this.tbControl.SuspendLayout();
@@ -76,6 +81,21 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 26);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem1.Text = "Excluir Cliente";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // gradientPanel2
             // 
@@ -183,6 +203,7 @@
             this.gradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gradientPanel1.ColorBottom = System.Drawing.Color.Aquamarine;
             this.gradientPanel1.ColorTop = System.Drawing.Color.MediumSlateBlue;
+            this.gradientPanel1.Controls.Add(this.btnExcluirCliente);
             this.gradientPanel1.Controls.Add(this.btnNovoCliente);
             this.gradientPanel1.Controls.Add(this.label7);
             this.gradientPanel1.Controls.Add(this.tbControl);
@@ -192,6 +213,15 @@
             this.gradientPanel1.Size = new System.Drawing.Size(988, 453);
             this.gradientPanel1.TabIndex = 4;
             // 
+            // btnExcluirCliente
+            // 
+            this.btnExcluirCliente.Location = new System.Drawing.Point(647, 401);
+            this.btnExcluirCliente.Name = "btnExcluirCliente";
+            this.btnExcluirCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirCliente.TabIndex = 10;
+            this.btnExcluirCliente.UseVisualStyleBackColor = true;
+            this.btnExcluirCliente.Click += new System.EventHandler(this.btnExcluirCliente_Click);
+            // 
             // btnNovoCliente
             // 
             this.btnNovoCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -200,7 +230,7 @@
             this.btnNovoCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovoCliente.ForeColor = System.Drawing.Color.White;
             this.btnNovoCliente.Location = new System.Drawing.Point(301, 389);
-            this.btnNovoCliente.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.btnNovoCliente.Margin = new System.Windows.Forms.Padding(0);
             this.btnNovoCliente.Name = "btnNovoCliente";
             this.btnNovoCliente.Size = new System.Drawing.Size(149, 42);
             this.btnNovoCliente.TabIndex = 6;
@@ -236,13 +266,13 @@
             // 
             // tbCadastro
             // 
-            this.tbCadastro.Controls.Add(this.txtCPF);
+            this.tbCadastro.Controls.Add(this.txtHora);
             this.tbCadastro.Controls.Add(this.lblCPF);
-            this.tbCadastro.Controls.Add(this.txtEmail);
+            this.tbCadastro.Controls.Add(this.txtData);
             this.tbCadastro.Controls.Add(this.lblemail);
-            this.tbCadastro.Controls.Add(this.txtNomeSocial);
+            this.tbCadastro.Controls.Add(this.txtParticipante);
             this.tbCadastro.Controls.Add(this.lblNomeSocial);
-            this.tbCadastro.Controls.Add(this.txtNomeCompleto);
+            this.tbCadastro.Controls.Add(this.txtTema);
             this.tbCadastro.Controls.Add(this.lblNomeCompleto);
             this.tbCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCadastro.Location = new System.Drawing.Point(4, 22);
@@ -253,13 +283,12 @@
             this.tbCadastro.Text = "Dados de Clientes";
             this.tbCadastro.UseVisualStyleBackColor = true;
             // 
-            // txtCPF
+            // txtHora
             // 
-            this.txtCPF.Location = new System.Drawing.Point(143, 139);
-            this.txtCPF.Mask = "###,###,###-##";
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(124, 26);
-            this.txtCPF.TabIndex = 7;
+            this.txtHora.Location = new System.Drawing.Point(143, 139);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(124, 26);
+            this.txtHora.TabIndex = 7;
             // 
             // lblCPF
             // 
@@ -272,12 +301,12 @@
             this.lblCPF.TabIndex = 6;
             this.lblCPF.Text = "Hora";
             // 
-            // txtEmail
+            // txtData
             // 
-            this.txtEmail.Location = new System.Drawing.Point(143, 99);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(367, 26);
-            this.txtEmail.TabIndex = 5;
+            this.txtData.Location = new System.Drawing.Point(143, 99);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(367, 26);
+            this.txtData.TabIndex = 5;
             // 
             // lblemail
             // 
@@ -290,12 +319,12 @@
             this.lblemail.TabIndex = 4;
             this.lblemail.Text = "Data";
             // 
-            // txtNomeSocial
+            // txtParticipante
             // 
-            this.txtNomeSocial.Location = new System.Drawing.Point(143, 61);
-            this.txtNomeSocial.Name = "txtNomeSocial";
-            this.txtNomeSocial.Size = new System.Drawing.Size(367, 26);
-            this.txtNomeSocial.TabIndex = 3;
+            this.txtParticipante.Location = new System.Drawing.Point(143, 61);
+            this.txtParticipante.Name = "txtParticipante";
+            this.txtParticipante.Size = new System.Drawing.Size(367, 26);
+            this.txtParticipante.TabIndex = 3;
             // 
             // lblNomeSocial
             // 
@@ -308,12 +337,12 @@
             this.lblNomeSocial.TabIndex = 2;
             this.lblNomeSocial.Text = "Participante";
             // 
-            // txtNomeCompleto
+            // txtTema
             // 
-            this.txtNomeCompleto.Location = new System.Drawing.Point(143, 22);
-            this.txtNomeCompleto.Name = "txtNomeCompleto";
-            this.txtNomeCompleto.Size = new System.Drawing.Size(367, 26);
-            this.txtNomeCompleto.TabIndex = 1;
+            this.txtTema.Location = new System.Drawing.Point(143, 22);
+            this.txtTema.Name = "txtTema";
+            this.txtTema.Size = new System.Drawing.Size(367, 26);
+            this.txtTema.TabIndex = 1;
             // 
             // lblNomeCompleto
             // 
@@ -341,8 +370,10 @@
             // 
             // lstCliente
             // 
+            this.lstCliente.ContextMenuStrip = this.contextMenuStrip1;
             this.lstCliente.HideSelection = false;
             this.lstCliente.Location = new System.Drawing.Point(9, 53);
+            this.lstCliente.MultiSelect = false;
             this.lstCliente.Name = "lstCliente";
             this.lstCliente.Size = new System.Drawing.Size(785, 152);
             this.lstCliente.TabIndex = 3;
@@ -381,7 +412,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmCadastrodeClientes";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.nepalform_load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.gradientPanel2.ResumeLayout(false);
             this.gradientPanel2.PerformLayout();
             this.gradientPanel1.ResumeLayout(false);
@@ -400,13 +431,13 @@
 
         private System.Windows.Forms.TabControl tbControl;
         private System.Windows.Forms.TabPage tbCadastro;
-        private System.Windows.Forms.MaskedTextBox txtCPF;
+        private System.Windows.Forms.MaskedTextBox txtHora;
         private System.Windows.Forms.Label lblCPF;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtData;
         private System.Windows.Forms.Label lblemail;
-        private System.Windows.Forms.TextBox txtNomeSocial;
+        private System.Windows.Forms.TextBox txtParticipante;
         private System.Windows.Forms.Label lblNomeSocial;
-        private System.Windows.Forms.TextBox txtNomeCompleto;
+        private System.Windows.Forms.TextBox txtTema;
         private System.Windows.Forms.Label lblNomeCompleto;
         private System.Windows.Forms.TabPage tbConsulta;
         private System.Windows.Forms.Button btnSalvar;
@@ -423,6 +454,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnNovoCliente;
         private System.Windows.Forms.ListView lstCliente;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button btnExcluirCliente;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
