@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\",
+  "WorkspaceRootPath": "C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\frmcadastrodeclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|solutionrelative:frmcadastrodeclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|c:\\users\\bryan\\source\\repos\\windowsforms\\crud\\frmcadastrodeclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|c:\\users\\bryan.freis\\source\\repos\\crud - conexus\\frmcadastrodeclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|solutionrelative:frmcadastrodeclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\gradientsidebarpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|solutionrelative:gradientsidebarpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\frmcadastrodeclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|solutionrelative:frmcadastrodeclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|c:\\users\\bryan\\source\\repos\\windowsforms\\crud\\frmcadastrodeclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|solutionrelative:frmcadastrodeclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\frmcadastrodeclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|solutionrelative:frmcadastrodeclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\gradientsidebarpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91C0A231-1CAA-4B07-9383-E77F53E7ED7B}|CRUD.csproj|solutionrelative:gradientsidebarpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +26,12 @@
       "DocumentGroups": [
         {
           "DockedHeight": 473,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -42,54 +46,51 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "frmCadastrodeClientes.cs",
-              "DocumentMoniker": "C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\frmCadastrodeClientes.cs",
+              "DocumentMoniker": "C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\frmCadastrodeClientes.cs",
               "RelativeDocumentMoniker": "frmCadastrodeClientes.cs",
-              "ToolTip": "C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\frmCadastrodeClientes.cs",
+              "ToolTip": "C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\frmCadastrodeClientes.cs",
               "RelativeToolTip": "frmCadastrodeClientes.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAswL4AAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAIkBAAAAAAAAAAAiwKsBAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T13:53:56.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-26T13:53:56.623Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "frmCadastrodeClientes.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\frmCadastrodeClientes.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\frmCadastrodeClientes.Designer.cs",
               "RelativeDocumentMoniker": "frmCadastrodeClientes.Designer.cs",
-              "ToolTip": "C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\frmCadastrodeClientes.Designer.cs",
+              "ToolTip": "C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\frmCadastrodeClientes.Designer.cs",
               "RelativeToolTip": "frmCadastrodeClientes.Designer.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAD4v18AAABcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMIBAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T03:15:09.251Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "GradientSideBarPanel.cs",
-              "DocumentMoniker": "C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\GradientSideBarPanel.cs",
+              "DocumentMoniker": "C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\GradientSideBarPanel.cs",
               "RelativeDocumentMoniker": "GradientSideBarPanel.cs",
-              "ToolTip": "C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\GradientSideBarPanel.cs",
+              "ToolTip": "C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\GradientSideBarPanel.cs",
               "RelativeToolTip": "GradientSideBarPanel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T14:32:39.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T14:32:39.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "frmCadastrodeClientes.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\frmCadastrodeClientes.cs",
+              "DocumentMoniker": "C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\frmCadastrodeClientes.cs",
               "RelativeDocumentMoniker": "frmCadastrodeClientes.cs",
-              "ToolTip": "C:\\Users\\Bryan\\source\\repos\\WIndowsforms\\CRUD\\frmCadastrodeClientes.cs [Design]",
+              "ToolTip": "C:\\Users\\bryan.freis\\source\\repos\\Crud - Conexus\\frmCadastrodeClientes.cs [Design]",
               "RelativeToolTip": "frmCadastrodeClientes.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T13:29:48.58Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-08-26T13:29:48.58Z"
             }
           ]
         }
